@@ -1,0 +1,14 @@
+header h1{
+  text-align: right;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    margin-left: 20px;
+    text-decoration: none;
+}
