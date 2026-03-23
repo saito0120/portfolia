@@ -33,6 +33,7 @@
 /* 大画面用 nav（写真に重なるスライド） */
 .nav-slide {
     display: none; /* デフォルト非表示 */
+    flex-direction: column;  
     position: absolute;
     top: 20%;     /* 写真の上に表示 */
     left: 0;
