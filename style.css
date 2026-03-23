@@ -22,23 +22,38 @@
     text-align: center;
 }
 
-/* nav 基本 */
-header nav {
-    margin-top: 10px;
+/* 名前下のナビ nav */
+.nav-small {
     display: flex;
     gap: 15px;
-    width: 100%;      /* 横幅100% */
-    overflow: hidden; /* はみ出した部分を隠す */
-    position: relative;
+    margin-top: 10px;
 }
 
-/* 大画面で nav をスライド */
+/* 大画面用 nav（写真に重なるスライド） */
+.nav-slide {
+    display: none; /* デフォルト非表示 */
+    position: absolute;
+    top: 20%;     /* 写真の上に表示 */
+    left: 0;
+    width: 100%;
+    gap: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* 大画面で切り替え */
 @media (min-width: 1200px) {
-    nav a {
-        display: inline-block;
-        white-space: nowrap;
-        transform: translateX(100%);
+    .nav-small {
+        display: none; /* 小画面用は非表示 */
+    }
+
+    .nav-slide {
+        display: flex;
         animation: slide-in 10s linear infinite;
+    }
+
+    .nav-slide a {
+        display: inline-block;
     }
 
     @keyframes slide-in {
