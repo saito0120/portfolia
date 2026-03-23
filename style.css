@@ -1,3 +1,4 @@
+/* header-top */
 .header-top {
     display: flex;
     flex-direction: column;
@@ -9,25 +10,25 @@
     text-align: center;
 }
 
+/* nav */
 header nav {
     margin-top: 10px;
     display: flex;
     gap: 15px;
 }
 
-/* 小画面用の画像サイズ */
+/* 画像の基本スタイル */
 .fade-photo {
-    width: 200px; /* 基本サイズ */
+    width: 50%;       /* 画面幅の50%に設定 */
+    max-width: 300px; /* 最大サイズ */
+    min-width: 150px; /* 最小サイズ */
+    height: auto;     /* 縦横比を維持 */
     mask-image: linear-gradient(to bottom, black 60%, transparent);
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
 }
 
-/* 大画面用 */
+/* 大画面でnavをスライドさせる */
 @media (min-width: 1200px) {
-    .fade-photo {
-        width: 50%; /* 大画面では大きく */
-    }
-
     nav {
         position: relative;
         overflow: hidden;
@@ -37,11 +38,11 @@ header nav {
         display: inline-block;
         white-space: nowrap;
         transform: translateX(100%);
-        animation: slide-in 5s linear infinite;
+        animation: slide-in 10s linear infinite;
     }
 
     @keyframes slide-in {
-        0%   { transform: translateX(100%); }
+        0% { transform: translateX(100%); }
         100% { transform: translateX(-100%); }
     }
 }
