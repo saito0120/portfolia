@@ -41,30 +41,37 @@ body {
 
 /* 大画面用 nav（縦並びスライド） */
 .nav-slide {
-    display: none;            /* デフォルト非表示 */
+    display: none;
     position: absolute;
-    top: 20%;                 /* 写真の上 */
-    left: 0;
-    width: 100%;
-    flex-direction: column;   /* 縦並び */
-    align-items: center;      /* 中央寄せ */
-    gap: 15px;                /* 縦の間隔 */
+    top: 20%;                /* 写真の上 */
+    left: 50%;               /* 中央寄せ */
+    transform: translateX(-50%);
+    width: 90%;              /* 画像幅の90%以内に制限 */
+    max-width: 1200px;       /* 任意で最大幅 */
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-sizing: border-box;  /* パディング込みで幅計算 */
+    padding: 0 20px;
 }
 
+/* 大画面用ナビリンク */
 .nav-slide a {
-    display: block;                   /* ブロックにすることで縦並び安定 */
-    text-decoration: none;            /* 下線消す */
-    color: white;                     /* 文字色 */
-    font-size: 100px;                  /* フォント大きく */
-    font-weight: bold;                /* 太字 */
-    font-family: 'Arial', sans-serif; /* 好きなフォント */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* 写真の上でも見やすい */
-    padding: 5px 0;                   /* 上下スペース */
-    transition: color 0.3s;           /* ホバー時の滑らかな変化 */
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    padding: 5px 0;
+    transition: color 0.3s;
+    
+    /* 画面幅に応じてフォント自動調整 */
+    font-size: clamp(24px, 5vw, 100px);
+    font-family: 'Arial', sans-serif;
 }
 
 .nav-slide a:hover {
-    color: #ffd700; /* ゴールドなど目立つ色に */
+    color: #ffd700;
 }
 
 /* 大画面用表示・スライドイン */
