@@ -1,38 +1,39 @@
-/* header-top */
+/* header-top を画面幅いっぱいに */
 .header-top {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    width: 100%;       /* 横幅100% */
+    margin: 0 auto;
 }
 
+/* 画像を親幅に合わせて自動リサイズ */
+.fade-photo {
+    width: 100%;      /* 親幅いっぱい */
+    height: auto;     /* 縦横比維持 */
+    display: block;   /* 余計な隙間をなくす */
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+}
+
+/* ヘッダー内 h1 */
 .header-top h1 {
     text-align: center;
 }
 
-/* nav */
+/* nav 基本 */
 header nav {
     margin-top: 10px;
     display: flex;
     gap: 15px;
+    width: 100%;      /* 横幅100% */
+    overflow: hidden; /* はみ出した部分を隠す */
+    position: relative;
 }
 
-/* 画像を画面幅に合わせて自動サイズ */
-.fade-photo {
-  width: 100%;    /* 親幅に合わせる */
-  height: auto;   /* 縦横比を維持 */
-  max-width: none; /* 制限を外す */
-  mask-image: linear-gradient(to bottom, black 60%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
-}
-
-/* 大画面でnavをスライドさせる */
+/* 大画面で nav をスライド */
 @media (min-width: 1200px) {
-    nav {
-        position: relative;
-        overflow: hidden;
-    }
-
     nav a {
         display: inline-block;
         white-space: nowrap;
