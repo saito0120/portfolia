@@ -1,18 +1,18 @@
-/* header-top を画面幅いっぱいに */
+/* header-top */
 .header-top {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 100%;       /* 横幅100% */
+    width: 100%;
     margin: 0 auto;
 }
 
-/* 画像を親幅に合わせて自動リサイズ */
+/* 画像 */
 .fade-photo {
-    width: 100%;      /* 親幅いっぱい */
-    height: auto;     /* 縦横比維持 */
-    display: block;   /* 余計な隙間をなくす */
+    width: 100%;
+    height: auto;
+    display: block;
     mask-image: linear-gradient(to bottom, black 60%, transparent);
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
 }
@@ -22,30 +22,30 @@
     text-align: center;
 }
 
-/* 名前下のナビ nav */
+/* 名前下のナビ */
 .nav-small {
     display: flex;
-    align-items: center;    /* 中央寄せ */
+    align-items: center;
     gap: 15px;
     margin-top: 10px;
 }
 
-/* 大画面用 nav（写真に重なるスライド） */
+/* 大画面用 nav（縦並びスライド） */
 .nav-slide {
-    display: none;           /* デフォルト非表示 */
+    display: none;            /* デフォルト非表示 */
     position: absolute;
-    top: 20%;                /* 写真の上 */
+    top: 20%;                 /* 写真の上 */
     left: 0;
     width: 100%;
-    gap: 20px;
-    flex-direction: column;  /* ← これで縦並び */
-    align-items: center;     /* 中央寄せ */
+    display: flex;
+    flex-direction: column;   /* 縦並び */
+    align-items: center;
+    gap: 15px;                /* 縦の間隔 */
     overflow: hidden;
-    white-space: normal;     /* nowrap を解除 */
 }
 
 .nav-slide a {
-    display: block;          /* ブロックにすることで縦並び安定 */
+    display: block;           /* 縦並び用 */
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -54,12 +54,12 @@
 /* 大画面用表示・スライドイン */
 @media (min-width: 1200px) {
     .nav-small {
-        display: none;       /* 小画面ナビ非表示 */
+        display: none;
     }
 
     .nav-slide {
         display: flex;
-        animation: slide-in 2s forwards; /* 右からスライド1回で停止 */
+        animation: slide-in 2s forwards;
     }
 }
 
