@@ -17,11 +17,14 @@ header nav {
     gap: 15px;
 }
 
-/* 画像の基本スタイル */
-.fade-photo { 
-  width: 200px; /* 好きなサイズに調整 */ 
-  mask-image: linear-gradient(to bottom, black 60%, transparent); 
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent); }
+/* 画像を画面幅に合わせて自動サイズ */
+.fade-photo {
+  width: 100%;    /* 親幅に合わせる */
+  height: auto;   /* 縦横比を維持 */
+  max-width: none; /* 制限を外す */
+  mask-image: linear-gradient(to bottom, black 60%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+}
 
 /* 大画面でnavをスライドさせる */
 @media (min-width: 1200px) {
