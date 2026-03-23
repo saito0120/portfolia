@@ -1,4 +1,4 @@
-/* header-top */
+/* header-top を画面幅いっぱいに */
 .header-top {
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
     margin: 0 auto;
 }
 
-/* 画像 */
+/* 画像を親幅に合わせて自動リサイズ */
 .fade-photo {
     width: 100%;
     height: auto;
@@ -22,7 +22,7 @@
     text-align: center;
 }
 
-/* 名前下のナビ */
+/* 小画面用 nav */
 .nav-small {
     display: flex;
     align-items: center;
@@ -37,32 +37,31 @@
     top: 20%;                 /* 写真の上 */
     left: 0;
     width: 100%;
-    display: flex;
     flex-direction: column;   /* 縦並び */
-    align-items: center;
+    align-items: center;      /* 中央寄せ */
     gap: 15px;                /* 縦の間隔 */
-    overflow: hidden;
 }
 
 .nav-slide a {
-    display: block;           /* 縦並び用 */
+    display: block;           /* ブロックにすることで縦並び安定 */
     text-decoration: none;
     color: white;
     font-size: 18px;
 }
 
-/* 大画面用表示・スライドイン */
+/* 大画面表示・スライドイン */
 @media (min-width: 1200px) {
     .nav-small {
-        display: none;
+        display: none;       /* 小画面ナビ非表示 */
     }
 
     .nav-slide {
         display: flex;
-        animation: slide-in 2s forwards;
+        animation: slide-in 2s forwards; /* 右からスライド1回で停止 */
     }
 }
 
+/* スライドインアニメーション */
 @keyframes slide-in {
     0% { transform: translateX(100%); }
     100% { transform: translateX(0); }
