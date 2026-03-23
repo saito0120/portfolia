@@ -60,6 +60,7 @@ body {
     display: block;
     text-decoration: none;
     color: white;
+    font-size: clamp(24px, 10vw, 100px);  /* 最小 24px、理想は画面幅の 10%、最大 100px */
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     padding: 5px 0;
