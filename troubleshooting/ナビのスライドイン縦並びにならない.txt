@@ -1,0 +1,17 @@
+トラブルの原因まとめ
+1️⃣ HTML構造の問題
+.nav-slide の中に aタグだけ をまとめる必要があった
+<br> を入れても縦並びは CSS 側で制御されるので効果なし
+2️⃣ CSSの指定ミス
+.nav-slide に flex-direction: column; が正しく書かれていなかった
+.nav-slide a が inline-block のままだと縦並びにならない
+white-space: nowrap; が残っていると縦並びが崩れる
+3️⃣ アニメーションの影響
+animation: slide-in infinite だとループしてしまい、定位置で止まらない
+1回だけスライドさせるには forwards を使う
+4️⃣ 小画面用ナビとの干渉
+.nav-small が残ったままだと、大画面時に縦並びナビが見えにくくなる
+まとめ
+縦並びは .nav-slide { display: flex; flex-direction: column; } と .nav-slide a { display: block; } で制御
+大画面表示はメディアクエリで切り替える
+アニメーションは forwards にして1回だけスライド

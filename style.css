@@ -43,13 +43,22 @@
 }
 
 .nav-slide a {
-    display: block;           /* ブロックにすることで縦並び安定 */
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
+    display: block;                   /* ブロックにすることで縦並び安定 */
+    text-decoration: none;            /* 下線消す */
+    color: white;                     /* 文字色 */
+    font-size: 24px;                  /* フォント大きく */
+    font-weight: bold;                /* 太字 */
+    font-family: 'Arial', sans-serif; /* 好きなフォント */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* 写真の上でも見やすい */
+    padding: 5px 0;                   /* 上下スペース */
+    transition: color 0.3s;           /* ホバー時の滑らかな変化 */
 }
 
-/* 大画面表示・スライドイン */
+.nav-slide a:hover {
+    color: #ffd700; /* ゴールドなど目立つ色に */
+}
+
+/* 大画面用表示・スライドイン */
 @media (min-width: 1200px) {
     .nav-small {
         display: none;       /* 小画面ナビ非表示 */
