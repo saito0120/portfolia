@@ -76,3 +76,24 @@
     0% { transform: translateX(100%); }
     100% { transform: translateX(0); }
 }
+
+#back-to-top {
+    position: fixed;      /* 画面に固定 */
+    bottom: 30px;         /* 下から30px */
+    right: 30px;          /* 右から30px */
+    padding: 10px 15px;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;        /* 初期は非表示 */
+    z-index: 1000;        /* ヘッダーや画像より前面に */
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    transition: opacity 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #555;
+}
