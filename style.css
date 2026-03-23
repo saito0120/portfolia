@@ -1,48 +1,47 @@
 .header-top {
     display: flex;
-    flex-direction: column; /* 縦並び */
-    align-items: center;    /* 中央揃え */
-    gap: 10px;              /* 画像と名前の間隔 */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .header-top h1 {
-    text-align: center; /* ← 名前を中央に */
+    text-align: center;
 }
 
 header nav {
-    margin-top: 10px;    /* navは画像＋名前の下に */
+    margin-top: 10px;
     display: flex;
-    gap: 15px;           /* 横並びにする */
+    gap: 15px;
 }
 
-/* 画面幅が大きいとき */
-@media (min-width: 1200px) {
-  .fade-photo {
-      width: 50%; /* 大画面では大きく */
-  }
-
-  nav {
-      position: relative;
-      overflow: hidden;
-  }
-
-  nav a {
-      display: inline-block;
-      white-space: nowrap;
-      transform: translateX(100%); /* 右からスタート */
-      animation: slide-in 5s linear infinite; /* 右→左に流す */
-  }
-
-  @keyframes slide-in {
-      0%   { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-  }
-/*大画面処理終了*/
-
+/* 小画面用の画像サイズ */
 .fade-photo {
-    width: 200px; /* 好きなサイズに調整 */
+    width: 200px; /* 基本サイズ */
     mask-image: linear-gradient(to bottom, black 60%, transparent);
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
 }
 
+/* 大画面用 */
+@media (min-width: 1200px) {
+    .fade-photo {
+        width: 50%; /* 大画面では大きく */
+    }
+
+    nav {
+        position: relative;
+        overflow: hidden;
+    }
+
+    nav a {
+        display: inline-block;
+        white-space: nowrap;
+        transform: translateX(100%);
+        animation: slide-in 5s linear infinite;
+    }
+
+    @keyframes slide-in {
+        0%   { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
 }
