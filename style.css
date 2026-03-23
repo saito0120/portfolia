@@ -31,35 +31,39 @@
 }
 
 /* 大画面用 nav（写真に重なるスライド） */
-.nav-slide a{
-    display: none; /* デフォルト非表示 */
-    flex-direction: column;  
+.nav-slide {
+    display: none;           /* デフォルト非表示 */
     position: absolute;
-    top: 20%;     /* 写真の上に表示 */
+    top: 20%;                /* 写真の上 */
     left: 0;
     width: 100%;
     gap: 20px;
-    white-space: nowrap;
+    flex-direction: column;  /* ← これで縦並び */
+    align-items: center;     /* 中央寄せ */
     overflow: hidden;
+    white-space: normal;     /* nowrap を解除 */
 }
 
-/* 大画面で切り替え */
+.nav-slide a {
+    display: block;          /* ブロックにすることで縦並び安定 */
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* 大画面用表示・スライドイン */
 @media (min-width: 1200px) {
     .nav-small {
-        display: none; /* 小画面用は非表示 */
+        display: none;       /* 小画面ナビ非表示 */
     }
 
     .nav-slide {
-    display: flex;
-    animation: slide-in 2s forwards; /* ← 1回だけスライドして停止 */
+        display: flex;
+        animation: slide-in 2s forwards; /* 右からスライド1回で停止 */
     }
+}
 
-    .nav-slide a {
-        display: inline-block;
-    }
-
-    @keyframes slide-in {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(0); }
-    }
+@keyframes slide-in {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
 }
