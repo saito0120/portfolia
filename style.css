@@ -49,8 +49,8 @@
     }
 
     .nav-slide {
-        display: flex;
-        animation: slide-in 10s linear infinite;
+    display: flex;
+    animation: slide-in 2s forwards; /* ← 1回だけスライドして停止 */
     }
 
     .nav-slide a {
