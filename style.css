@@ -37,7 +37,7 @@ header nav {
       0%   { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
   }
-}/*大画面処理終了
+/*大画面処理終了*/
 
 .fade-photo {
     width: 200px; /* 好きなサイズに調整 */
@@ -45,3 +45,4 @@ header nav {
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
 }
 
+}
