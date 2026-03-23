@@ -46,7 +46,7 @@ body {
     top: 20%;                /* 写真の上 */
     left: 50%;               /* 中央寄せ */
     transform: translateX(-50%);
-    width: 90%;              /* 画像幅の90%以内に制限 */
+    height: 90%;              /* 画像縦幅の90%以内に制限 */
     max-width: 1200px;       /* 任意で最大幅 */
     flex-direction: column;
     align-items: center;
