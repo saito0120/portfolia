@@ -51,7 +51,7 @@
     display: block;                   /* ブロックにすることで縦並び安定 */
     text-decoration: none;            /* 下線消す */
     color: white;                     /* 文字色 */
-    font-size: 24px;                  /* フォント大きく */
+    font-size: 100px;                  /* フォント大きく */
     font-weight: bold;                /* 太字 */
     font-family: 'Arial', sans-serif; /* 好きなフォント */
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* 写真の上でも見やすい */
