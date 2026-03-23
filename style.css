@@ -28,6 +28,7 @@
     align-items: center;
     gap: 15px;
     margin-top: 10px;
+    text-align: center;
 }
 
 /* 大画面用 nav（縦並びスライド） */
