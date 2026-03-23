@@ -1,21 +1,22 @@
-header h1{
-  text-align: right;
-}
-
-header{
+.header-top {
     display: flex;
-    flex-direction: column; /* ← これで縦並び */
-    align-items: center;
-    gap: 10px;
+    flex-direction: column; /* 縦並び */
+    align-items: center;    /* 中央揃え */
+    gap: 10px;              /* 画像と名前の間隔 */
 }
 
-nav{
-    margin-left: 20px;
-    text-decoration: none;
+.header-top h1 {
+    text-align: center; /* ← 名前を中央に */
 }
 
-.fade-photo{
-  width:100%;
-  mask-image: linear-gradient(to bottom, black 60%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+header nav {
+    margin-top: 10px;    /* navは画像＋名前の下に */
+    display: flex;
+    gap: 15px;           /* 横並びにする */
+}
+
+.fade-photo {
+    width: 200px; /* 好きなサイズに調整 */
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
 }
