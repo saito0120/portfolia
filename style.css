@@ -25,6 +25,7 @@
 /* 名前下のナビ nav */
 .nav-small {
     display: flex;
+    align-items: center;    /* 中央寄せ */
     gap: 15px;
     margin-top: 10px;
 }
