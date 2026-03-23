@@ -5,8 +5,8 @@ header h1{
 header{
     display: flex;
     flex-direction: column; /* ← これで縦並び */
-    justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 nav{
