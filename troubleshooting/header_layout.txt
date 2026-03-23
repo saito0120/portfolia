@@ -1,0 +1,54 @@
+1. トラブルの概要
+現象：ヘッダー内の画像と名前が縦に並ばず、名前が画像の横や右に寄ってしまった
+発生環境：
+HTML: <header> <img> <h1> <nav> </header>
+CSS: header { display: flex; flex-direction: column; align-items: center; }
+GitHub Codespaces / GitHub Pages
+
+2. 原因
+CSS の text-align が影響
+header h1 { text-align: right; } が設定されていたため、h1 が右寄せになっていた
+画像の幅が100%になっていた
+画像が親幅いっぱいになり、名前との距離が開きすぎて「横にいるように見える」
+header に直接 flex を適用していた
+nav も含まれていたため flex の影響で名前が思った位置にこない
+
+3. 解決策
+
+ラッパー div を作成
+
+<div class="header-top">
+    <img src="suisou.png" class="fade-photo">
+    <h1>Daigo Saito</h1>
+</div>
+
+CSS 修正
+
+.header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* 画像と名前の間隔 */
+}
+
+.header-top h1 {
+    text-align: center;
+}
+
+.fade-photo {
+    width: 200px; /* 適切な幅に調整 */
+}
+
+nav は header とは別の要素にして横並びに
+
+header nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+4. 学び・ポイント
+「縦並び」は flex-direction: column + align-items で作る
+画像とテキストは別ラッパーで囲むと扱いやすい
+text-align や画像幅が思わぬ挙動を作ることがある
+CSS は「影響範囲」を意識して書くことが重要

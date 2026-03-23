@@ -15,8 +15,33 @@ header nav {
     gap: 15px;           /* 横並びにする */
 }
 
+/* 画面幅が大きいとき */
+@media (min-width: 1200px) {
+  .fade-photo {
+      width: 50%; /* 大画面では大きく */
+  }
+
+  nav {
+      position: relative;
+      overflow: hidden;
+  }
+
+  nav a {
+      display: inline-block;
+      white-space: nowrap;
+      transform: translateX(100%); /* 右からスタート */
+      animation: slide-in 5s linear infinite; /* 右→左に流す */
+  }
+
+  @keyframes slide-in {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+  }
+}/*大画面処理終了
+
 .fade-photo {
     width: 200px; /* 好きなサイズに調整 */
     mask-image: linear-gradient(to bottom, black 60%, transparent);
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
 }
+
