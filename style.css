@@ -1,5 +1,8 @@
 body {
     font-family: 'Arial', sans-serif;
+    background: #f0f8ff;
+    margin: 0;
+    padding: 0;
 }
 
 /* header-top を画面幅いっぱいに */
@@ -24,51 +27,47 @@ body {
 /* ヘッダー内 h1 */
 .header-top h1 {
     text-align: center;
+    margin: 10px 0;
+    font-size: 2.5rem;
 }
 
 /* 小画面ナビのリンク */
 .nav-small a {
-    text-decoration: none;            /* 下線を消す */
-    color: #333;                      /* 初期文字色 */
-    font-weight: bold;                 /* 太字 */
-    transition: color 0.3s;           /* ホバー時の滑らかな変化 */
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 0 8px;
+    transition: color 0.3s;
 }
 
-/* 小画面ナビのホバー時 */
 .nav-small a:hover {
-    color: #ffd700; /* 大画面ナビと同じ色に */
+    color: #ffd700;
 }
 
 /* 大画面用 nav（縦並びスライド） */
 .nav-slide {
     display: none;
     position: absolute;
-    top: 20%;                /* 写真の上 */
-    left: 50%;               /* 中央寄せ */
+    top: 20%;
+    left: 50%;
     transform: translateX(-50%);
-    height: 90%;              /* 画像縦幅の90%以内に制限 */
-    max-width: 1200px;       /* 任意で最大幅 */
+    height: 90%;
+    max-width: 1200px;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    box-sizing: border-box;  /* パディング込みで幅計算 */
+    box-sizing: border-box;
     padding: 0 20px;
 }
 
-/* 大画面用ナビリンク */
 .nav-slide a {
     display: block;
     text-decoration: none;
     color: white;
-    font-size: clamp(24px, 10vw, 100px);  /* 最小 24px、理想は画面幅の 10%、最大 100px */
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    padding: 5px 0;
     transition: color 0.3s;
-    
-    /* 画面幅に応じてフォント自動調整 */
     font-size: clamp(24px, 5vw, 100px);
-    font-family: 'Arial', sans-serif;
 }
 
 .nav-slide a:hover {
@@ -77,14 +76,8 @@ body {
 
 /* 大画面用表示・スライドイン */
 @media (min-width: 1200px) {
-    .nav-small {
-        display: none;       /* 小画面ナビ非表示 */
-    }
-
-    .nav-slide {
-        display: flex;
-        animation: slide-in 2s forwards; /* 右からスライド1回で停止 */
-    }
+    .nav-small { display: none; }
+    .nav-slide { display: flex; animation: slide-in 2s forwards; }
 }
 
 /* スライドインアニメーション */
@@ -94,26 +87,58 @@ body {
 }
 
 /* ----------------------- */
-/* hero下の縦ブロック */
+/* 本文ブロック */
 .body-part {
     flex: 1;
     display: flex;
-    flex-direction: column; /* 横並び → 縦並びに変更 */
-    justify-content: center; /* 縦中央 */
-    align-items: center;     /* 横中央 */
-    width: 100%;             /* 幅いっぱいに広げる */
-    text-align: center;      /* テキスト中央寄せ */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 800px;
+    text-align: left;
+    padding: 40px 20px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    line-height: 1.7;
+    transition: transform 0.3s;
 }
 
-.body-part p,
+.body-part:hover {
+    transform: translateY(-5px);
+}
+
+.body-part h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 5px;
+}
+
+.body-part h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.body-part p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
 .body-part ul {
-    width: 80%;              /* 読みやすく横幅を制限 */
-    margin: 10px 0;          /* 上下に余白 */
-    text-align: left;        /* 箇条書きは左寄せの方が見やすい */
+    padding-left: 20px;
+    list-style-type: disc;
 }
 
-.body-part:last-child {
-    border-bottom: none;
+.body-part ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
 }
 
 /* ----------------------- */
@@ -131,19 +156,19 @@ body {
 .bubble-left { left: 0; }
 .bubble-right { right: 0; }
 
-/* 泡 */
 .bubble {
     position: absolute;
     bottom: 0;
     border-radius: 50%;
-    background: rgba(173, 216, 230, 0.8); /* 水色泡 */
-    /* JSでサイズ・位置・アニメーション指定 */
+    background: rgba(173, 216, 230, 0.8);
 }
 
+/* ----------------------- */
+/* Back to Top ボタン */
 #back-to-top {
-    position: fixed;      /* 画面に固定 */
-    bottom: 30px;         /* 下から30px */
-    right: 30px;          /* 右から30px */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
     padding: 10px 15px;
     font-size: 18px;
     background-color: #333;
@@ -151,8 +176,8 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: none;        /* 初期は非表示 */
-    z-index: 1000;        /* ヘッダーや画像より前面に */
+    display: none;
+    z-index: 1000;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     transition: opacity 0.3s;
 }
