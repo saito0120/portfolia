@@ -5,7 +5,6 @@
 <meta charset="UTF-8">
 <title>My Portfolio</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -14,82 +13,76 @@
   <div class="header-top">
     <img src="Images/suisou.png" class="fade-photo">
 
-      <!-- 大画面用スライドナビ（画像に重なる） -->
-      <div class="nav-slide">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#works">Works</a>
-        <a href="#contact">Contact</a>
-        <a href="#Portfolio">Portfolio</a>
-      </div>
+    <!-- 大画面用スライドナビ（画像に重なる） -->
+    <div class="nav-slide">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+      <a href="#Portfolio">Portfolio</a>
+    </div>
 
     <h1>Daigo Saito</h1>
-  <!-- 小画面用ナビ（従来のnav） -->
-  <nav class="nav-small">
-    <a href="#about">About　</a>
-    <a href="#skills">Skills　</a>
-    <a href="#works">Works　</a>
-    <a href="#contact">Contact　</a>
-    <a href="#Portfolio">Portfolio</a>
-  </nav>
+
+    <!-- 小画面用ナビ -->
+    <nav class="nav-small">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+      <a href="#Portfolio">Portfolio</a>
+    </nav>
   </div>
 </header>
-<div class-"body-container">
-<div class-"bubble-left"></div>
-<div class-"bubble-right"></div>
 
+<!-- hero下の縦ブロック＋泡 -->
+<div class="body-container">
+  <!-- 左右泡コンテナ -->
+  <div class="bubble-left"></div>
+  <div class="bubble-right"></div>
 
-<section id="hero">
-  <h2>Web Developer</h2>
-  <p>
-    仙台デザイン＆テクノロジー専門学校でWeb開発を学んでいます。<br>
-    同時にvulnhubを活用した、脆弱性の検証にも取り組んでおります。
-  </p>
-</section>
+  <!-- 3つの縦ブロック -->
+  <div class="body-part" id="about">
+    <h2>About</h2>
+    <p>
+      仙台デザイン&テクノロジー専門学校でWeb技術を学んでいます。<br>
+      VulnHubの仮想環境を利用して脆弱性の仕組みを理解しながら、<br>
+      セキュリティ分野にも興味を持って学習しています。
+    </p>
+  </div>
 
-<section id="about">
-<h2>About</h2>
-<p>
-仙台デザイン&テクノロジー専門学校でWeb技術を学んでいます。<br>
-VulnHubの仮想環境を利用して脆弱性の仕組みを理解しながら、<br>
-セキュリティ分野にも興味を持って学習しています。
-</p>
-</section>
+  <div class="body-part" id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML / CSS：基本的なWebページ制作</li>
+      <li>JavaScript：簡単な動きのあるUIの実装</li>
+      <li>PHP：フォーム処理</li>
+      <li>Laravel：データベース保存</li>
+      <li>AWS：クラウド環境の基礎学習</li>
+    </ul>
+  </div>
 
-<section id="skills">
-<h2>Skills</h2>
-<ul>
-<li>HTML / CSS：基本的なWebページ制作</li>
-<li>JavaScript：簡単な動きのあるUIの実装</li>
-<li>PHP：フォーム処理</li>
-<li>Laravel：データベース保存</li>
-<li>AWS：クラウド環境の基礎学習</li>
-</ul>
-</section>
-
-<section id="works">
-<h2>Works</h2>
-
-<h3>家庭菜園用AIチャット支援アプリ</h3>
-<p>
-Reactを使用し、家庭菜園の相談ができる
-AIチャット形式の診断アプリを制作しました。
-</p>
-
-</section>
+  <div class="body-part" id="works">
+    <h2>Works</h2>
+    <h3>家庭菜園用AIチャット支援アプリ</h3>
+    <p>
+      Reactを使用し、家庭菜園の相談ができる
+      AIチャット形式の診断アプリを制作しました。
+    </p>
+  </div>
+</div>
 
 <section id="contact">
-<h2>Contact</h2>
-<p>Email: wjpajm@email.com</p>
+  <h2>Contact</h2>
+  <p>Email: wjpajm@email.com</p>
 </section>
 
 <section id="Portfolio">
-<h2>Portfolio</h2>
+  <h2>Portfolio</h2>
 </section>
-</div>
 
-  <button id="back-to-top">↑ Top</button>
-  <script src="script.js"></script>
+<button id="back-to-top">↑ Top</button>
+<script src="script.js"></script>
 
 </body>
 </html>
