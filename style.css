@@ -95,23 +95,21 @@ body {
 
 /* ----------------------- */
 /* hero下の縦ブロック */
-.body-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    height: calc(100vh - 200px); /* hero高さに応じて調整 */
-    overflow: hidden;
-}
-
-/* 各ブロック */
 .body-part {
     flex: 1;
     display: flex;
-    justify-content: center;  /* 横中央 */
-    align-items: center;      /* 縦中央 */
-    border-bottom: 1px solid #ccc;
-    font-size: 22px;
-    text-align: center;
+    flex-direction: column; /* 横並び → 縦並びに変更 */
+    justify-content: center; /* 縦中央 */
+    align-items: center;     /* 横中央 */
+    width: 100%;             /* 幅いっぱいに広げる */
+    text-align: center;      /* テキスト中央寄せ */
+}
+
+.body-part p,
+.body-part ul {
+    width: 80%;              /* 読みやすく横幅を制限 */
+    margin: 10px 0;          /* 上下に余白 */
+    text-align: left;        /* 箇条書きは左寄せの方が見やすい */
 }
 
 .body-part:last-child {
