@@ -1,3 +1,4 @@
+/* 全体 */
 body {
     font-family: 'Arial', sans-serif;
     background: #f0f8ff;
@@ -46,13 +47,9 @@ body {
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    height: 90%;
-    max-width: 1200px;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    box-sizing: border-box;
-    padding: 0 20px;
 }
 
 .nav-slide a {
@@ -79,21 +76,25 @@ body {
 
 /* ----------------------- */
 /* 本文ブロック */
-.body-part {
+.body-container {
     display: flex;
     flex-direction: column;
-    align-items: center;       /* ブロック自体は中央寄せ */
+    align-items: center;   /* 中央揃え */
+    width: 100%;
+}
+
+.body-part {
     width: 90%;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 40px auto;
     padding: 40px 30px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* タイトル中央 */
 }
-
-.body-part:hover { transform: translateY(-5px); }
 
 .body-part h2,
 .body-part h3 { text-align: center; color: #333; }
@@ -114,7 +115,7 @@ body {
 .body-part ul {
     width: 100%;
     max-width: 700px;
-    text-align: left;      /* 本文は左寄せ */
+    text-align: left;      /* 本文は左揃え */
     line-height: 1.7;
     margin-bottom: 15px;
 }
@@ -123,15 +124,15 @@ body {
 .body-part ul li { margin-bottom: 8px; }
 
 /* ----------------------- */
-/* 左右泡（画面最下層から上に上がる） */
+/* 左右泡（画面下端固定） */
 .bubble-left,
 .bubble-right {
-    position: fixed;       /* 画面下端に固定 */
+    position: fixed;
     bottom: 0;
     width: 60px;
     height: 100vh;
     pointer-events: none;
-    z-index: 0;            /* コンテンツの下に表示 */
+    z-index: 0; /* 背景 */
 }
 
 .bubble-left { left: 0; }
