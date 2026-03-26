@@ -96,7 +96,7 @@ body {
     align-items: center;
     width: 90%;
     max-width: 800px;
-    text-align: left;
+    text-align: center;
     padding: 40px 20px;
     margin: 20px auto;
     background: rgba(255, 255, 255, 0.9);
@@ -123,46 +123,49 @@ body {
     font-size: 1.5rem;
     margin-top: 20px;
     margin-bottom: 10px;
+    text-align: center;
     color: #555;
 }
 
 .body-part p {
     font-size: 1rem;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .body-part ul {
     padding-left: 20px;
     list-style-type: disc;
+    text-align: center;
 }
 
 .body-part ul li {
     margin-bottom: 8px;
     font-size: 1rem;
+    text-align: center;
 }
 
-/* ----------------------- */
-/* 左右泡コンテナ */
+/* 左右泡コンテナを画面最下層に固定 */
 .bubble-left,
 .bubble-right {
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    position: fixed;       /* absolute → fixed に変更 */
+    bottom: 0;             /* 画面最下端から出現 */
     width: 60px;
+    height: 100vh;         /* 上方向に画面全体 */
     pointer-events: none;
-    z-index: 100;
+    z-index: 0;            /* コンテンツの下に表示 */
 }
 
 .bubble-left { left: 0; }
 .bubble-right { right: 0; }
 
+/* 泡自体 */
 .bubble {
     position: absolute;
-    bottom: 0;
+    bottom: 0;             /* 画面最下部からスタート */
     border-radius: 50%;
     background: rgba(173, 216, 230, 0.8);
 }
-
 /* ----------------------- */
 /* Back to Top ボタン */
 #back-to-top {
