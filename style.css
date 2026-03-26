@@ -5,7 +5,7 @@ body {
     padding: 0;
 }
 
-/* header-top を画面幅いっぱいに */
+/* header-top */
 .header-top {
     display: flex;
     flex-direction: column;
@@ -15,7 +15,6 @@ body {
     margin: 0 auto;
 }
 
-/* 画像を親幅に合わせて自動リサイズ */
 .fade-photo {
     width: 100%;
     height: auto;
@@ -24,14 +23,13 @@ body {
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
 }
 
-/* ヘッダー内 h1 */
 .header-top h1 {
     text-align: center;
     margin: 10px 0;
     font-size: 2.5rem;
 }
 
-/* 小画面ナビのリンク */
+/* ナビ */
 .nav-small a {
     text-decoration: none;
     color: #333;
@@ -40,11 +38,8 @@ body {
     transition: color 0.3s;
 }
 
-.nav-small a:hover {
-    color: #ffd700;
-}
+.nav-small a:hover { color: #ffd700; }
 
-/* 大画面用 nav（縦並びスライド） */
 .nav-slide {
     display: none;
     position: absolute;
@@ -70,17 +65,13 @@ body {
     font-size: clamp(24px, 5vw, 100px);
 }
 
-.nav-slide a:hover {
-    color: #ffd700;
-}
+.nav-slide a:hover { color: #ffd700; }
 
-/* 大画面用表示・スライドイン */
 @media (min-width: 1200px) {
     .nav-small { display: none; }
     .nav-slide { display: flex; animation: slide-in 2s forwards; }
 }
 
-/* スライドインアニメーション */
 @keyframes slide-in {
     0% { transform: translateX(50%);}
     100% { transform: translateX(-50%);}
@@ -89,69 +80,56 @@ body {
 /* ----------------------- */
 /* 本文ブロック */
 .body-part {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: center;       /* ブロック自体は中央寄せ */
     width: 90%;
     max-width: 800px;
-    text-align: center;
-    padding: 40px 20px;
     margin: 20px auto;
-    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    line-height: 1.7;
     transition: transform 0.3s;
 }
 
-.body-part:hover {
-    transform: translateY(-5px);
-}
+.body-part:hover { transform: translateY(-5px); }
+
+.body-part h2,
+.body-part h3 { text-align: center; color: #333; }
 
 .body-part h2 {
     font-size: 2rem;
-    text-align: center;
     margin-bottom: 20px;
-    color: #333;
     border-bottom: 2px solid #ffd700;
     padding-bottom: 5px;
 }
 
 .body-part h3 {
     font-size: 1.5rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #555;
+    margin: 20px 0 10px;
 }
 
-.body-part p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
+.body-part p,
 .body-part ul {
-    padding-left: 20px;
-    list-style-type: disc;
-    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;      /* 本文は左寄せ */
+    line-height: 1.7;
+    margin-bottom: 15px;
 }
 
-.body-part ul li {
-    margin-bottom: 8px;
-    font-size: 1rem;
-    text-align: center;
-}
+.body-part ul { padding-left: 20px; }
+.body-part ul li { margin-bottom: 8px; }
 
-/* 左右泡コンテナを画面最下層に固定 */
+/* ----------------------- */
+/* 左右泡（画面最下層から上に上がる） */
 .bubble-left,
 .bubble-right {
-    position: fixed;       /* absolute → fixed に変更 */
-    bottom: 0;             /* 画面最下端から出現 */
+    position: fixed;       /* 画面下端に固定 */
+    bottom: 0;
     width: 60px;
-    height: 100vh;         /* 上方向に画面全体 */
+    height: 100vh;
     pointer-events: none;
     z-index: 0;            /* コンテンツの下に表示 */
 }
@@ -159,15 +137,15 @@ body {
 .bubble-left { left: 0; }
 .bubble-right { right: 0; }
 
-/* 泡自体 */
 .bubble {
     position: absolute;
-    bottom: 0;             /* 画面最下部からスタート */
+    bottom: 0;
     border-radius: 50%;
     background: rgba(173, 216, 230, 0.8);
 }
+
 /* ----------------------- */
-/* Back to Top ボタン */
+/* Back to Top */
 #back-to-top {
     position: fixed;
     bottom: 30px;
@@ -185,6 +163,5 @@ body {
     transition: opacity 0.3s;
 }
 
-#back-to-top:hover {
-    background-color: #555;
-}
+#back-to-top:hover { background-color: #555; }
+
