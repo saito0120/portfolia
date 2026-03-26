@@ -93,6 +93,55 @@ body {
     100% { transform: translateX(-50%);}
 }
 
+/* ----------------------- */
+/* hero下の縦ブロック */
+.body-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: calc(100vh - 200px); /* hero高さに応じて調整 */
+    overflow: hidden;
+}
+
+/* 各ブロック */
+.body-part {
+    flex: 1;
+    display: flex;
+    justify-content: center;  /* 横中央 */
+    align-items: center;      /* 縦中央 */
+    border-bottom: 1px solid #ccc;
+    font-size: 22px;
+    text-align: center;
+}
+
+.body-part:last-child {
+    border-bottom: none;
+}
+
+/* ----------------------- */
+/* 左右泡コンテナ */
+.bubble-left,
+.bubble-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.bubble-left { left: 0; }
+.bubble-right { right: 0; }
+
+/* 泡 */
+.bubble {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    background: rgba(173, 216, 230, 0.8); /* 水色泡 */
+    /* JSでサイズ・位置・アニメーション指定 */
+}
+
 #back-to-top {
     position: fixed;      /* 画面に固定 */
     bottom: 30px;         /* 下から30px */
