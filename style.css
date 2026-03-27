@@ -106,16 +106,17 @@ body {
     padding-bottom: 5px;
 }
 
+/*Reactを使用し、家庭菜園の相談ができるAIチャット形式の診断アプリを制作しました。*/
 .body-part h3 {
     font-size: 1.5rem;
     margin: 20px 0 10px;
 }
 
-.body-part p,
+.body-part p,/*<p></p>全部*/
 .body-part ul {
     width: 100%;
     max-width: 700px;
-    text-align: left;      /* 本文は左揃え */
+    text-align: Center;      
     line-height: 1.7;
     margin-bottom: 15px;
 }
