@@ -15,12 +15,13 @@ const rightContainer = document.querySelector('.bubble-right');
 
 function createBubble(container) {
     const bubble = document.createElement('div');
-    const size = Math.random() * 10 + 5;
+    const size = Math.random() * 50 + 5;
     bubble.classList.add('bubble');
     bubble.style.width = size + 'px';
     bubble.style.height = size + 'px';
     bubble.style.left = Math.random() * 50 + 'px';
-    bubble.style.transition = 'transform 3s linear, opacity 3s linear';
+    const duration = 2000 + size * 50; // 大きいほど遅い
+    bubble.style.transition = `transform ${duration}ms linear, opacity ${duration}ms linear`;
     container.appendChild(bubble);
 
     setTimeout(() => {
