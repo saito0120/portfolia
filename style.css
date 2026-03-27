@@ -112,17 +112,14 @@ body {
     margin: 20px 0 10px;
 }
 
-.body-part p,/*<p></p>全部*/
-.body-part ul {
-    width: 100%;
+
+.body-part p {
     max-width: 700px;
-    text-align: Center;      
+    margin: 0 auto;   /* ← 中央配置の本体 */
+    text-align: left; /* ← 文字は左 */
     line-height: 1.7;
-    margin-bottom: 15px;
 }
 
-.body-part ul { padding-left: 20px; }
-.body-part ul li { margin-bottom: 8px; }
 
 /* ----------------------- */
 /* 左右泡（画面下端固定） */
