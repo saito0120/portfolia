@@ -164,3 +164,27 @@ body {
 
 #back-to-top:hover { background-color: #555; }
 
+.app-list {
+  display: flex;
+  gap: 20px;       /* アイコン間のスペース */
+  flex-wrap: wrap;  /* 画面幅に応じて折り返す */
+}
+
+.app-item {
+  display: flex;            /* 内部をフレックス化 */
+  flex-direction: column;   /* 縦並びにする */
+  align-items: center;      /* 中央揃え */
+  text-align: center;       /* 文字も中央 */
+}
+.app-item img {
+  display: block;
+  margin: 0 auto 10px; /* 上下の余白 */
+  border-radius: 10px;  /* 丸角で見た目を良くする */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.app-item img:hover {
+  transform: scale(1.1); /* ホバーで拡大 */
+}
+
