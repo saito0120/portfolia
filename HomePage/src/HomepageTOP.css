@@ -1,4 +1,11 @@
 /* 全体 */
+html, body, #root{
+  width: 100%;    /*要素の横幅を画面いっぱいにする*/
+  height: 100%;   /*要素の高さを画面いっぱいにする*/
+  margin: 0;      /*要素の外側余白を0にする*/
+  padding: 0;     /*要素の内側余白を0にする*/
+}
+
 body {
   font-family: 'Arial', sans-serif;
   background: #f0f8ff;
@@ -187,15 +194,24 @@ body {
 /* ポートフォリオアイコン */
 .app-list {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap;           /* 幅を超えると折り返す */
+  justify-content: center;   /* 行全体を中央揃え */
+  gap: 20px;                 /* アイテム間のスペース */
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc; /* 全体の下線 */
 }
 
 .app-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;    /* アイコン上、タイトル下 */
   align-items: center;
   text-align: center;
+  padding: 10px;
+}
+
+.app-item a {
+  text-decoration: none;   /* 下線を消す */
+  color: inherit;          /* 親要素の文字色を使う */
 }
 
 .app-item img {

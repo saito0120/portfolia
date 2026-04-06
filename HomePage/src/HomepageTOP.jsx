@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './HomepageTOP.css';
 import suisouImg from './Images/suisou.png';
-import favicon from './Portfolio-title-icon/favicon.png';
+import favicon from './portfolioICONS/favicon.png';
+import PrimaryMathStudyicon from './portfolioICONS/PrimaryMathStudyicon.png';
 
 const HomepageTOP = () => {
   const backToTopRef = useRef(null);
@@ -100,7 +101,7 @@ const HomepageTOP = () => {
         <div className="body-part" id="works">
           <h2>Works</h2>
           <h3>家庭菜園用AIチャット支援アプリ</h3>
-          <p>Reactを使用し、家庭菜園の相談ができるAIチャット形式の診断アプリを制作しました。</p>
+          <p>Reactを使用し、家庭菜園の相談ができるAIチャット形式の診断アプリを制作。</p>
         </div>
       </div>
 
@@ -114,19 +115,24 @@ const HomepageTOP = () => {
       <section id="Portfolio">
         <div className="body-part">
           <h2>Portfolio</h2>
-          <div className="app-list">
-            <div className="app-item">
-              <a href="https://saito0120.github.io/React-App-Login-Lab/" target="_blank" rel="noopener noreferrer">
-                <img src={favicon} alt="ログインアプリ" width="100" />
-              </a>
-              <p>Hash Learning</p>
 
-              <a href="https://saito0120.github.io/PrimarySchool-MathStudy/" target="_blank" rel="noopener noreferrer">
-                <img src={favicon} alt="小学算数" width="100" />
-              </a>
-              <p>Hash Learning</p>
+            <div className="app-list">
+
+                <div className="app-item">
+                    <a href="https://saito0120.github.io/React-App-Login-Lab/" target="_blank" rel="noopener noreferrer">
+                        <img src={favicon} alt="ログインアプリ" width="100" />
+                        <p>Hash Learning</p>
+                    </a>
+                </div>
+
+                <div className="app-item">
+                    <a href="https://saito0120.github.io/PrimarySchool-MathStudy/" target="_blank" rel="noopener noreferrer">
+                        <img src={PrimaryMathStudyicon} alt="小学算数" width="100" />
+                        <p>PrimaryMathStudy</p>
+                    </a>
+                </div>
+            
             </div>
-          </div>
         </div>
       </section>
 
